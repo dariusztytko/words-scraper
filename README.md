@@ -1,5 +1,5 @@
 # Words Scraper
-Selenium based a web scraper to generate passwords list.
+Selenium based web scraper to generate passwords list.
 
 ## Installation
 ```

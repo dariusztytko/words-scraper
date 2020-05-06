@@ -24,7 +24,7 @@ Optional *--show-gui* switch may be used to track the progress and make a quick 
 $ python3 words-scraper.py -o words.txt --show-gui --depth 1 https://www.example.com
 ```
 
-Generated word list can be expanded by using *words-converter.py* script.
+Generated words list can be expanded by using *words-converter.py* script.
 This script removes special chars and accents.
 An example Polish word *źdźbło!* will be transformed into the following words:
 * źdźbło!

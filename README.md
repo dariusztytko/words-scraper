@@ -19,14 +19,14 @@ $ sudo pip3 install -r words-scraper/requirements.txt
 $ python3 words-scraper.py -o words.txt https://www.example.com https://blog.example.com
 ```
 Use *--depth* option to scrape words from the linked pages as well.
-Optional *--show-gui* switch may be useful to track the progress and make quick view of the company page.
+Optional *--show-gui* switch may be useful to track the progress and make a quick view of the company page.
 ```shell script
 $ python3 words-scraper.py -o words.txt --show-gui --depth 1 https://www.example.com
 ```
 
-Generated word list can be expanded by using words-converter.py script.
+Generated word list can be expanded by using *words-converter.py* script.
 This script removes special chars and accents.
-E.g. Polish word *źdźbło!* will be splitted into the following words:
+An example Polish word *źdźbło!* will be transformed into the following words:
 * źdźbło!
 * zdzblo!
 * źdźbło
@@ -37,9 +37,9 @@ $ cat words.txt | python3 words-converter.py | sort -u > words2.txt
 
 ### Scraping words from the company's Twitter
 Twitter page is dynamically loaded while scrolling.
-Use *--max-scrolls* option to scrape words.
+Use *--max-scrolls* option to scrape the words.
 ```shell script
-$ python3 words-scraper.py -o words.txt --show-gui --max-scrolls 500 https://twitter.com/example.com
+$ python3 words-scraper.py -o words.txt --show-gui --max-scrolls 300 https://twitter.com/example.com
 ```
 
 ### Scraping via Socks proxy

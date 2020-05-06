@@ -19,7 +19,7 @@ $ sudo pip3 install -r words-scraper/requirements.txt
 $ python3 words-scraper.py -o words.txt https://www.example.com https://blog.example.com
 ```
 Use *--depth* option to scrape words from the linked pages as well.
-Optional *--show-gui* switch may be useful to track the progress and make a quick view of the company page.
+Optional *--show-gui* switch may be used to track the progress and make a quick view of the page.
 ```shell script
 $ python3 words-scraper.py -o words.txt --show-gui --depth 1 https://www.example.com
 ```

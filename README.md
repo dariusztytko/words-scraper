@@ -14,10 +14,15 @@ $ sudo pip3 install -r words-scraper/requirements.txt
 ## Use cases
 
 ### Scraping words from the company's pages
-
 ```
 $ python3 words-scraper.py -o words.txt https://www.example.com https://blog.example.com
 ```
+
+Such generated words list can be used for cracking company related hashes
+```
+$ hashcat -m 0 -a 0 hashes.txt words.txt
+```
+
 Use *--depth* option to scrape words from the linked pages as well.
 Optional *--show-gui* switch may be used to track the progress and make a quick view of the page.
 ```shell script

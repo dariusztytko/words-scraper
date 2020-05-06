@@ -2,10 +2,11 @@
 Selenium based a web scraper to generate passwords list.
 
 ## Installation
-```shell script
+```
 # Download Firefox webdriver from https://github.com/mozilla/geckodriver/releases
 $ tar xzf geckodriver-v{VERSION-HERE}.tar.gz
 $ sudo mv geckodriver /usr/local/bin # Make sure it is in your PATH
+$ geckodriver --version # Make sure webdriver is properly installed
 $ git clone https://github.com/dariusztytko/words-scraper
 $ sudo pip3 install -r words-scraper/requirements.txt
 ```
@@ -14,7 +15,7 @@ $ sudo pip3 install -r words-scraper/requirements.txt
 
 ### Scraping words from the company's pages
 
-```shell script
+```
 $ python3 words-scraper.py -o words.txt https://www.example.com https://blog.example.com
 ```
 Use *--depth* option to scrape words from the linked pages as well.
@@ -23,15 +24,15 @@ Optional *--show-gui* switch may be useful to track the progress and make quick 
 $ python3 words-scraper.py -o words.txt --show-gui --depth 1 https://www.example.com
 ```
 
-The generated word list can be expanded by using words-converter.py script.
+Generated word list can be expanded by using words-converter.py script.
 This script removes special chars and accents.
 E.g. Polish word *źdźbło!* will be splitted into the following words:
 * źdźbło!
 * zdzblo!
 * źdźbło
 * zdzblo
-```shell script
-$ cat words.txt | python3 words-converter.py > words2.tx
+```
+$ cat words.txt | python3 words-converter.py | sort -u > words2.txt
 ```
 
 ### Scraping words from the company's Twitter
@@ -42,13 +43,13 @@ $ python3 words-scraper.py -o words.txt --show-gui --max-scrolls 500 https://twi
 ```
 
 ### Scraping via Socks proxy
-```shell script
-$ ssh -D 1080 -Nf user@{IP-HERE} >/dev/null 2>&
+```
+$ ssh -D 1080 -Nf {USER-HERE}@{IP-HERE} >/dev/null 2>&
 $ python3 words-scraper.py -o words.txt --socks-proxy 127.0.0.1:1080 https://www.example.com
 ```
 
 ## Usage
-```shell script
+```
 usage: words-scraper.py [-h] [--depth DEPTH] [--max-scrolls MAX_SCROLLS]
                          [--min-word-length MIN_WORD_LENGTH]
                          [--page-load-delay PAGE_LOAD_DELAY]

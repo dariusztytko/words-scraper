@@ -18,13 +18,13 @@ $ sudo pip3 install -r words-scraper/requirements.txt
 $ python3 words-scraper.py -o words.txt https://www.example.com https://blog.example.com
 ```
 
-Such generated words list can be used to perform online brute-force attack or for cracking password hashes.
+Such generated words list can be used to perform online brute-force attack or for cracking password hashes:
 ```
 $ hashcat -m 0 hashes.txt words.txt
 ```
 
 Use *--depth* option to scrape words from the linked pages as well.
-Optional *--show-gui* switch may be used to track the progress and make a quick view of the page.
+Optional *--show-gui* switch may be used to track the progress and make a quick view of the page:
 ```shell script
 $ python3 words-scraper.py -o words.txt --depth 1 --show-gui https://www.example.com
 ```
@@ -42,7 +42,7 @@ $ cat words.txt | python3 words-converter.py | sort -u > words2.txt
 
 ### Scraping words from the target's Twitter
 Twitter page is dynamically loaded while scrolling.
-Use *--max-scrolls* option to scrape words.
+Use *--max-scrolls* option to scrape words:
 ```shell script
 $ python3 words-scraper.py -o words.txt --max-scrolls 300 --show-gui https://twitter.com/example.com
 ```

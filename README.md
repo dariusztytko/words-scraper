@@ -13,20 +13,20 @@ $ sudo pip3 install -r words-scraper/requirements.txt
 
 ## Use cases
 
-### Scraping words from the company's pages
+### Scraping words from the target's pages
 ```
 $ python3 words-scraper.py -o words.txt https://www.example.com https://blog.example.com
 ```
 
-Such generated words list can be used for cracking company related hashes
+Such generated words list can be used to perform online brute-force attack or for cracking password hashes.
 ```
-$ hashcat -m 0 -a 0 hashes.txt words.txt
+$ hashcat -m 0 hashes.txt words.txt
 ```
 
 Use *--depth* option to scrape words from the linked pages as well.
 Optional *--show-gui* switch may be used to track the progress and make a quick view of the page.
 ```shell script
-$ python3 words-scraper.py -o words.txt --show-gui --depth 1 https://www.example.com
+$ python3 words-scraper.py -o words.txt --depth 1 --show-gui https://www.example.com
 ```
 
 Generated words list can be expanded by using *words-converter.py* script.
@@ -40,11 +40,11 @@ An example Polish word *źdźbło!* will be transformed into the following words
 $ cat words.txt | python3 words-converter.py | sort -u > words2.txt
 ```
 
-### Scraping words from the company's Twitter
+### Scraping words from the target's Twitter
 Twitter page is dynamically loaded while scrolling.
-Use *--max-scrolls* option to scrape the words.
+Use *--max-scrolls* option to scrape words.
 ```shell script
-$ python3 words-scraper.py -o words.txt --show-gui --max-scrolls 300 https://twitter.com/example.com
+$ python3 words-scraper.py -o words.txt --max-scrolls 300 --show-gui https://twitter.com/example.com
 ```
 
 ### Scraping via Socks proxy
